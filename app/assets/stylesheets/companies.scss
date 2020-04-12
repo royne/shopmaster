@@ -1,3 +1,45 @@
-// Place all the styles related to the Companies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.new_company{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   background: rgba(#3f006c, 1) url(asset_path('background.png')) no-repeat right top;
+    background-attachment: fixed;
+  .new_company_form{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    color: #FFFFFF;
+    .form_basic{
+      color: #FFFFFF;
+    }
+    .new_company_info{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #FFFFFF;
+      &>h1{
+        margin-bottom: 30px;
+        font-weight: bold;
+        text-shadow: 0 5px 10px rgba(#000000, 0.7);
+      }
+    }
+  }
+  .new_company_img{
+    width: 50%;
+  }
+}
+.new_company_title{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-shadow: 0 5px 10px rgba(#000000, 0.7);
+}
