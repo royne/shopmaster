@@ -1,0 +1,30 @@
+// buttons
+
+.action_button{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 1% 5%;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  background: #5f2c82;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5f2c82, #49a09d);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5f2c82, #49a09d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  cursor: pointer;
+  // color: #FFFFFF;
+  color: #FFFFFF;
+  text-shadow: 0 3px 7px #000000;
+  &:hover{
+    box-shadow: 0 7px 15px rgba(0,0,0,0.8);
+  }
+}
+.heigth_img_carrusel{
+  max-height: 70vh;
+  max-width: 100%;
+}
