@@ -38,6 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
 gem 'rolify'
+gem 'acts_as_tenant'
 gem 'simple_form'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
