@@ -3,6 +3,11 @@ en:
     submit:
       create: "Enviar"
       update: "Guardar"
+  errors:
+    messages:
+      general: "Por favor revise linformación suministrada"
+      blank: "No puede estar vacío"
+      taken: 'ya existe en el sistema'    
   simple_form:
     "yes": 'Sí'
     "no": 'No'
@@ -20,3 +25,4 @@ en:
         contact: 'Nombre de Contacto'
     error_notification:
       default_message: "Please review the problems below:"
+      taken: 'El correo ya se encuentra registrado en el sistema'

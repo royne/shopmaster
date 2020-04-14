@@ -1,5 +1,9 @@
 @import "bootstrap"; 
 @import "utilities";
 @import "home"; 
-@import "companies"; 
+@import "companies";
+@import "themes/basic/main"; 
 
+*{
+  font-family: 'Roboto Slab', serif;
+}
