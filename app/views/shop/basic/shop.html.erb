@@ -1,0 +1,46 @@
+<section class="shop_basic">
+  <nav class="nav nav_shop_basic">
+    <%= render 'companies/themes/basic/partials/nav' %>
+  </nav>
+
+  <div class="shop_main_basic">
+    <div class="shop_main_search_basic">
+      <div class="">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Buscar camisetas">
+        </div>
+      </div>
+      <div class="">.
+        <p>Categorias</p>
+        <ul class="list-group">
+          <li class="list-group-item">ropa</li>
+          <li class="list-group-item">libros</li>
+          <li class="list-group-item">tecnologia</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="shop_main_content_basic">
+      <div class="shop_main_content_slider_basic">
+        <%= render 'shop/basic/slider' %>
+      </div>
+      <div class="shop_main_content_products_basic">
+        <% 6.times do %>
+          <div class="shop_main_content_products_box_basic">
+            <div class="shop_main_content_products_box_img_basic">
+              <img src="https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1.jpg">
+            </div>
+            <div class="shop_main_content_products_box_info_basic">
+              <p class="product_name_basic">Rocker Style</p>
+              <span class="product_description_basic">Perfecta para salidas</span>
+              <span class="product_price_basic">$25.000</span>
+            </div>
+            <div class="shop_main_content_products_box_buttoms_basic">
+              <%= link_to 'Detalles', root_path, class:'product_buttom_basic' %>
+            </div>          
+          </div>
+        <% end %>
+      </div>      
+    </div>
+  </div>
+</section>

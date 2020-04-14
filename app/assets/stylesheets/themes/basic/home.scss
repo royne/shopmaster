@@ -8,6 +8,15 @@
     z-index: 10;
     background-color: rgba(0,0,0, 0.3);
     box-shadow: 0 5px 10px rgba(#000000, 0.6);
+    .nav_items_basic{
+      &>ul{
+        display: flex;
+        flex-direction: row;
+        &>li{
+          margin-left: 20px;
+        }
+      }
+    }
   }
   .home_banner_basic{
     width: 100wh;
