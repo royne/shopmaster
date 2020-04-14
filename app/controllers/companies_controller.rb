@@ -24,16 +24,12 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
-    @company = Company.new(company_params)
-
-    respond_to do |format|
-      if @company.save
-        format.html { redirect_to @company, notice: 'Company was successfully created.' }
-        format.json { render :show, status: :created, location: @company }
-      else
-        format.html { render :new }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
-      end
+    @company = Company.new(company_params)   
+    if @company.save
+      create_company_user(@company)
+      redirect_to company_instructions_path
+    else
+      render :new 
     end
   end
 
@@ -71,4 +67,15 @@ class CompaniesController < ApplicationController
     def company_params
       params.require(:company).permit(:name, :email, :phone, :contact)
     end
+
+    def create_company_user(company)
+      company = company
+      @user = User.new(email: company.email, company_id: company.id, password: Devise.friendly_token.first(8))
+      if @user.save
+        @user.add_role(:company)
+        token = @user.generate_password_token
+        ApplicationMailer.send_deliver_to_company(@user, token).deliver_now
+      end 
+    end
+    
 end

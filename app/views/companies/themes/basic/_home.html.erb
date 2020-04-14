@@ -1,0 +1,45 @@
+<section class="home_basic">
+  <nav class="nav nav_basic">
+    <%= render 'companies/themes/basic/partials/nav' %>
+  </nav>
+  
+  <div class="home_banner_basic">
+    <h2 class="home_banner_title_basic">Encuentra el mejor comercio de la ciudad en un solo lugar</h2>
+    <%= link_to 'Conocenos', root_path, class:'button_basic' %>
+  </div>
+
+  <div class="home_info_basic">
+    <% 3.times do %>
+      <div class="home_info_box_basic">
+        <div class="home_info_box_img_basic">
+          <img src="<%= asset_path('ico.png') %>">
+        </div>
+        <p>GESTIONA LA HOJA DE VIDA DE TUS ALUMNOS</p>
+        <span>Es muy fácil, solo crea un nuevo alumno y conoce todo sobre el, permanencia, cursos, pagos, deudas… ten control de todo
+        en un solo lugar.</span>  
+      </div>
+    <% end %>
+  </div>
+
+  <div class="home_banner_second_basic">
+    <div class="home_banner_second_info_basic">
+      <h2>GESTIONA LA HOJA DE VIDA DE TUS ALUMNOS</h2><br>
+      <span>
+        No tendrás que preocuparte por costosas facturas al final del mes, pago solo por lo que utilices y siempre ten el control de tu operación.
+      </span><br>
+      <%= link_to 'Ver Productos', root_path, class:'button_basic' %>
+    </div>
+  </div>
+
+  <div class="home_contact_basic">
+    
+  </div>
+
+  <%= render 'companies/themes/basic/partials/footer' %>
+
+  <p class="p-footer">Desarrollado por <a href="https://roynechaves.com" target="_blank">©Zaiens</a> developers.</p>
+</section>
+
+<script>
+
+</script>

@@ -5,7 +5,11 @@
         SHOPINGMASTER
       </div>
       <div class="">
-
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class:"nav-link" if signed_in? %>
+          </li>
+        </ul>
       </div>
     </nav>
     <div class="container">
@@ -20,7 +24,7 @@
     <h3>Tienes una empresa?</h3>
     <h3>Aun no vendes por internet?</h3>
     <h2>Solo crea una cuenta y comienza a vender gratis con un par de cliks!!!</h2>
-    <div class="action_button">Comienza a vender YA</div>
+    <%= link_to 'Comienza a vender YA', new_company_path, class:'action_button' %>
   </div>
   <div class="home_banner_principal">
     <div id="banner_principal" class="carousel slide carousel-fade" data-ride="carousel">

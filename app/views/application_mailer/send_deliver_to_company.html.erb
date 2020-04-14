@@ -1,0 +1,12 @@
+<p>
+  Bienvenido a ShopingMaster <%= @user.email %>
+</p>
+<hr/>
+<p>
+  <%- if @token %>
+    Ingresa <%= link_to 'a este enlace', edit_password_url(@user, reset_password_token: @token) %> <br />
+    <br />
+    - Crea una contraseña con la cual vas a ingresar a la plataforma.<br />
+    - Comienza a VENDER!<br />
+  <%- end %>
+</p>
