@@ -1,17 +1,26 @@
+<div id="product-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= title %></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+      </div>
+      <%= simple_form_for([@company, @product]) do |f| %>
+        <%= f.input :company_id, as: :hidden, input_html: {value: @company.id} %>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.input :category_id, collection: Category.all, include_blank: true%>
+          </div>
+        </div>
 
-<%= simple_form_for(@product) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.association :company %>
-    <%= f.association :category %>
+        <div class="modal-footer">
+          <%= f.submit button_name, class: "btn btn-dark btn-md btn-block" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+</div>

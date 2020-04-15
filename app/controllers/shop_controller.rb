@@ -3,6 +3,7 @@ class ShopController < CompaniesController
 
   def index
     @categories = Category.all
+    @products = Product.all
     render "shop/basic/shop"    
   end
   
