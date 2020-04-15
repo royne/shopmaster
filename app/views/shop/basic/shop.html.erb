@@ -43,7 +43,9 @@
           <% @products.each do |x| %>
             <div class="shop_main_content_products_box_basic">
               <div class="shop_main_content_products_box_img_basic">
-                <img src="https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1.jpg">
+                <% if x.image.exists? %>
+                  <%= image_tag x.image.url(:thumb) %>
+                <% end %>
               </div>
               <div class="shop_main_content_products_box_info_basic">
                 <p class="product_name_basic"><%= x.name %></p>
