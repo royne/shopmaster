@@ -1,0 +1,27 @@
+<div id="product-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= title %></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+      </div>
+      <%= simple_form_for([@company, @product]) do |f| %>
+        <%= f.input :company_id, as: :hidden, input_html: {value: @company.id} %>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.input :category_id, collection: Category.all, include_blank: true%>
+            <%= f.file_field :image %>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <%= f.submit button_name, class: "btn btn-dark btn-md btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

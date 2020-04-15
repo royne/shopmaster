@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_12_043433) do
+ActiveRecord::Schema.define(version: 2020_04_15_054105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_categories_on_company_id"
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -22,6 +30,22 @@ ActiveRecord::Schema.define(version: 2020_04_12_043433) do
     t.string "contact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "price"
+    t.bigint "company_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["company_id"], name: "index_products_on_company_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -55,4 +79,7 @@ ActiveRecord::Schema.define(version: 2020_04_12_043433) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "categories", "companies"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "companies"
 end
