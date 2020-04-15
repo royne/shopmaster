@@ -13,11 +13,20 @@
       <div class="">.
         <p>Categorias</p>
         <ul class="list-group">
-          <li class="list-group-item">ropa</li>
-          <li class="list-group-item">libros</li>
-          <li class="list-group-item">tecnologia</li>
+          <% if @categories.present? %>
+            <% @categories.each do |x| %>
+              <li class="list-group-item"><%= x.name %></li>
+            <% end %>
+          <% else %>
+            <% 5.times do %>
+              <li class="list-group-item">Nombre de categoria</li>
+            <% end %>
+          <% end %>
         </ul>
       </div>
+      <br>
+      <%= link_to 'Nueva Categoria', new_company_category_path(@company), 
+          class:'btn btn-dark', remote: true if current_user.present? && current_user.has_role?(:company) %>
     </div>
 
     <div class="shop_main_content_basic">
