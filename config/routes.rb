@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :companies do
-    
+    get 'shop', to: 'shop#index'
   end
 
 end
